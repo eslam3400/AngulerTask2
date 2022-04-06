@@ -1,3 +1,4 @@
+import { ToggleSidebarService } from './services/toggle-sidebar.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'Task2';
+  constructor(public ToggleSidebarService: ToggleSidebarService) { }
 }

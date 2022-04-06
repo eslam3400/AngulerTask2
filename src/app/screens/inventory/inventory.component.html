@@ -1,0 +1,12 @@
+<div class="grid-x header">
+  <div class="cell medium-6 grid-x">
+    <h1 class="cell medium-3">Inventory</h1>
+    <input type="text" class="cell medium-6">
+  </div>
+  <div class="cell medium-6 add" dir="rtl">
+    <i class="fa-solid fa-plus d-flex justify-content-center align-items-center" data-bs-toggle="modal"
+      data-bs-target="#add-product"></i>
+  </div>
+</div>
+<app-add-product-modal class="modal fade" id="add-product"></app-add-product-modal>
+<app-product-list></app-product-list>

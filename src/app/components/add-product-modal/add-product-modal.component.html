@@ -1,0 +1,57 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title" id="exampleModalLabel">Add Product</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">
+            <div class="medium-6 cell">
+              <label>Name
+                <input type="text" formControlName="name" required>
+              </label>
+            </div>
+            <div class="medium-6 cell">
+              <label>Price
+                <input type="number" formControlName="price" step=".1" required>
+              </label>
+            </div>
+          </div>
+          <div class="grid-x grid-padding-x">
+            <div class="medium-12 cell">
+              <label>Img
+                <input type="file" formControlName="img" accept="image/*" id="upload-img" (change)="onImgUpload($event)"
+                  required>
+              </label>
+            </div>
+          </div>
+          <div class="grid-x grid-padding-x mt-3">
+            <div class="medium-6 cell">
+              <label>Cost
+                <input type="number" formControlName="cost" step=".1">
+              </label>
+            </div>
+            <div class="medium-6 cell">
+              <label>Quantity
+                <input type="number" formControlName="quantity" step=".1">
+              </label>
+            </div>
+          </div>
+          <div class="grid-x grid-padding-x mt-3">
+            <div class="cell">
+              <p>Img Preview:</p>
+              <img [src]="uploadedImgUrl" width="50%">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer mt-3">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid" data-bs-dismiss="modal">Save
+            changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<section class="table p-4">
+  <div class="grid-x table-header text-center">
+    <p class="cell medium-2">Img</p>
+    <p class="cell medium-2">Name</p>
+    <p class="cell medium-2">Quantity</p>
+    <p class="cell medium-2">Cost</p>
+    <p class="cell medium-2">Price</p>
+    <p class="cell medium-2">Actions</p>
+  </div>
+  <div *ngFor="let item of ProductService.products" class="grid-x table-header text-center">
+    <img class="cell medium-2" [src]="item.img" width="100%" />
+    <p class="cell medium-2">{{item.name}}</p>
+    <p class="cell medium-2">{{item.quantity}}</p>
+    <p class="cell medium-2">{{item.cost}}</p>
+    <p class="cell medium-2">{{item.price}}</p>
+    <p class="cell medium-2">+</p>
+  </div>
+</section>

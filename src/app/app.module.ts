@@ -3,14 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { HomeComponent } from './screens/home/home.component';
+import { InventoryComponent } from './screens/inventory/inventory.component';
+import { ContentContainerComponent } from './components/content-container/content-container.component';
+import { AddProductModalComponent } from './components/add-product-modal/add-product-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopBarComponent,
+    SidebarComponent,
+    ProductListComponent,
+    HomeComponent,
+    InventoryComponent,
+    ContentContainerComponent,
+    AddProductModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
