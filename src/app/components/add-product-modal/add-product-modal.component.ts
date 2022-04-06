@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ProductService } from './../../services/product.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -18,7 +19,7 @@ export class AddProductModalComponent {
 
   uploadedImgUrl: any;
 
-  constructor(private ProductService: ProductService) { }
+  constructor(private ProductService: ProductService, private router: Router) { }
 
   addProduct() {
     if (this.addProductForm.value.cost != null || this.addProductForm.value.quantity != null) {
@@ -36,6 +37,7 @@ export class AddProductModalComponent {
     })
     this.addProductForm.reset();
     this.uploadedImgUrl = null;
+    document.getElementById('add-product-modal-close')?.click();
   }
 
   onImgUpload(e: any) {
