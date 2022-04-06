@@ -1,18 +1,35 @@
-<section class="table p-4">
+<section class="p-4 mt-3">
   <div class="grid-x table-header text-center">
-    <p class="cell medium-2">Img</p>
-    <p class="cell medium-2">Name</p>
+    <p class="cell medium-1"></p>
+    <p class="cell medium-3">Name</p>
     <p class="cell medium-2">Quantity</p>
     <p class="cell medium-2">Cost</p>
     <p class="cell medium-2">Price</p>
     <p class="cell medium-2">Actions</p>
   </div>
-  <div *ngFor="let item of ProductService.products" class="grid-x table-header text-center">
-    <img class="cell medium-2" [src]="item.img" width="100%" />
-    <p class="cell medium-2">{{item.name}}</p>
-    <p class="cell medium-2">{{item.quantity}}</p>
-    <p class="cell medium-2">{{item.cost}}</p>
-    <p class="cell medium-2">{{item.price}}</p>
-    <p class="cell medium-2">+</p>
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item grid-y table-row" *ngFor="let item of ProductService.products">
+      <div class="cell-12 grid-x pt-3 pb-3 text-center d-flex align-items-center accordion-header"
+        [id]="'flush-'+item.id">
+        <button class="cell medium-1 accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          [attr.data-bs-target]="'#flush-collapse-'+item.id">
+        </button>
+        <p class="cell medium-3">{{item.name}}</p>
+        <p class="cell medium-2">{{item.quantity}}</p>
+        <p class="cell medium-2">{{item.cost}}</p>
+        <p class="cell medium-2">{{item.price}}</p>
+        <p class="cell medium-2">+</p>
+      </div>
+      <div class="cell small-12 grid-x accordion-collapse collapse" [id]="'flush-collapse-'+item.id"
+        data-bs-parent="#accordionFlushExample">
+        <div class="cell small-3 text-center">
+          <p class="mb-2">Img:</p>
+          <img [src]="item.img" width="100%" />
+        </div>
+        <div class="cell small-9 text-center">
+          <p class="mb-2">Radder:</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
