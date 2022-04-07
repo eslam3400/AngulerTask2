@@ -15,10 +15,17 @@
           [attr.data-bs-target]="'#flush-collapse-'+item.id">
         </button>
         <p class="cell medium-3">{{item.name}}</p>
-        <p class="cell medium-2">{{item.quantity}}</p>
-        <p class="cell medium-2">{{item.cost}}</p>
+        <div class="cell medium-2" *ngIf="item.cost != null; else elseQuantityBlock">{{item.quantity}}</div>
+        <ng-template #elseQuantityBlock>
+          <p class="cell medium-2">-</p>
+        </ng-template>
+        <div class="cell medium-2" *ngIf="item.cost != null; else elseCostBlock">{{item.cost}}</div>
+        <ng-template #elseCostBlock>
+          <p class="cell medium-2">-</p>
+        </ng-template>
         <p class="cell medium-2">{{item.price}}</p>
-        <p class="cell medium-2">+</p>
+        <p class="cell medium-2"><span data-bs-toggle="modal" [attr.data-bs-target]="'#edit-product-'+item.id"
+            class="edit-product">+</span></p>
       </div>
       <div class="cell small-12 grid-x accordion-collapse collapse" [id]="'flush-collapse-'+item.id"
         data-bs-parent="#accordionFlushExample">
@@ -30,6 +37,8 @@
           <p class="mb-2">Radder:</p>
         </div>
       </div>
+      <app-edit-product-modal [productID]="item.id" class="modal fade" [id]="'edit-product-'+item.id">
+      </app-edit-product-modal>
     </div>
   </div>
 </section>

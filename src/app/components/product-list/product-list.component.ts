@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-list.component.sass']
 })
 export class ProductListComponent {
-
   constructor(public ProductService: ProductService) { }
 }

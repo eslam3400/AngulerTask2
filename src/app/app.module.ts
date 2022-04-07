@@ -12,6 +12,8 @@ import { InventoryComponent } from './screens/inventory/inventory.component';
 import { ContentContainerComponent } from './components/content-container/content-container.component';
 import { AddProductModalComponent } from './components/add-product-modal/add-product-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditProductModalComponent } from './components/edit-product-modal/edit-product-modal.component';
+import { CollapseIconComponent } from './components/collapse-icon/collapse-icon.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     InventoryComponent,
     ContentContainerComponent,
-    AddProductModalComponent
+    AddProductModalComponent,
+    EditProductModalComponent,
+    CollapseIconComponent,
   ],
   imports: [
     BrowserModule,
