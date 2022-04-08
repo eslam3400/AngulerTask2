@@ -18,6 +18,7 @@ export class EditProductModalComponent {
   constructor(private productService: ProductService) { }
 
   editProduct() {
-
+    this.productService.addQuantity(this.productID, this.editProductForm.value.quantity, this.editProductForm.value.cost)
+    this.editProductForm.reset();
   }
 }
