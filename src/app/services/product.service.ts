@@ -29,6 +29,6 @@ export class ProductService {
   }
 
   calcProfitMargin(price: number, cost: number) {
-    return (price - cost) / price;
+    return Math.round(((price - cost) / price) * 100);
   }
 }

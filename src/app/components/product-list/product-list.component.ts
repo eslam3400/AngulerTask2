@@ -9,6 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class ProductListComponent implements OnInit {
   filteredProducts: any;
   name: any;
+  chartOptions = {
+    hasNeedle: true,
+    needleColor: 'gray',
+    needleUpdateSpeed: 1000,
+    arcColors: ['red', 'yellow', 'green'],
+    arcDelimiters: [33, 66],
+    needleStartValue: 0,
+  }
 
   constructor(private ProductService: ProductService) { }
 

@@ -14,7 +14,7 @@ import { AddProductModalComponent } from './components/add-product-modal/add-pro
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditProductModalComponent } from './components/edit-product-modal/edit-product-modal.component';
 import { CollapseIconComponent } from './components/collapse-icon/collapse-icon.component';
-import { ProfitMarginComponent } from './components/profit-margin/profit-margin.component';
+import { GaugeChartModule } from 'angular-gauge-chart';
 
 @NgModule({
   declarations: [
@@ -28,13 +28,13 @@ import { ProfitMarginComponent } from './components/profit-margin/profit-margin.
     AddProductModalComponent,
     EditProductModalComponent,
     CollapseIconComponent,
-    ProfitMarginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GaugeChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
