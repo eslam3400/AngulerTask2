@@ -1,6 +1,9 @@
 <div class="medium-cell-block">
   <ul>
-    <li><i class="fa-solid fa-house"></i> <a [routerLink]="['']">Home</a></li>
-    <li><i class="fa-solid fa-box"></i> <a [routerLink]="['/inventory']">Inventory</a></li>
+    <li routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-house"></i> <a
+        [routerLink]="['']">Home</a></li>
+    <li routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-box"></i> <a
+        [routerLink]="['/inventory']">Inventory</a>
+    </li>
   </ul>
 </div>
