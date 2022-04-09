@@ -37,6 +37,10 @@
         </div>
         <div class="cell small-6">
           <p class="mb-2">Profit Margin:</p>
+          <app-profit-margin class="profit-margin"></app-profit-margin>
+          <!-- <div class="profit-margin"
+            [ngStyle]="{'background-color':(item.profitMargin <= 0 || !item.profitMargin) ? 'red': (item.profitMargin < .3) ? 'yellow' : 'green'}">
+          </div> -->
         </div>
       </div>
       <app-edit-product-modal [productID]="item.id" class="modal fade" [id]="'edit-product-'+item.id">
