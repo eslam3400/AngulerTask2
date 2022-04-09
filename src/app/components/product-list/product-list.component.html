@@ -35,7 +35,7 @@
           <p class="mb-2">Product Img:</p>
           <img class="product-img" [src]="item.img" width="200px" height="200px" />
         </div>
-        <div class="cell small-6">
+        <div class="cell small-6 profit-margin">
           <p class="mb-2">Profit Margin:</p>
           <rg-gauge-chart [canvasWidth]="200"
             [needleValue]="(item.profitMargin <= 0) ? 16 : ((item.profitMargin < 30) ? 49: 84)"
